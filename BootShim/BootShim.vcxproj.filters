@@ -16,10 +16,53 @@
     <Filter Include="boot">
       <UniqueIdentifier>{74302343-4bda-4a2c-be4f-d5e34782ac03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="grub">
+      <UniqueIdentifier>{ea9dddf1-3607-480f-b525-dd09e77b9a12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="kernel">
+      <UniqueIdentifier>{f8fb36b4-7ab0-4fa5-996a-9b4111f6de12}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="boot.s">
+    <None Include="..\boot\boot.s">
       <Filter>boot</Filter>
     </None>
+    <None Include="..\boot\gdt64.s">
+      <Filter>boot</Filter>
+    </None>
+    <None Include="..\boot\longmode.s">
+      <Filter>boot</Filter>
+    </None>
+    <None Include="..\grub\grub.cfg">
+      <Filter>grub</Filter>
+    </None>
+    <None Include="linker.ld" />
+    <None Include="Makefile" />
+    <None Include="README-BootShim.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\kernel\idt.c">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\keyboard.c">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\kmain.c">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\managed_stub.c">
+      <Filter>kernel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\kernel\vga.c">
+      <Filter>kernel</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\kernel\idt.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\kernel\vga.h">
+      <Filter>kernel</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

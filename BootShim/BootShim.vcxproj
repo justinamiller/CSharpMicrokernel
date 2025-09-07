@@ -26,6 +26,26 @@
       <Platform>ARM64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="..\boot\boot.s" />
+    <None Include="..\boot\gdt64.s" />
+    <None Include="..\boot\longmode.s" />
+    <None Include="..\grub\grub.cfg" />
+    <None Include="linker.ld" />
+    <None Include="Makefile" />
+    <None Include="README-BootShim.md" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\kernel\idt.c" />
+    <ClCompile Include="..\kernel\keyboard.c" />
+    <ClCompile Include="..\kernel\kmain.c" />
+    <ClCompile Include="..\kernel\managed_stub.c" />
+    <ClCompile Include="..\kernel\vga.c" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\kernel\idt.h" />
+    <ClInclude Include="..\kernel\vga.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <ProjectGuid>{245FA60F-9610-6656-AC7F-6F3A989D7D06}</ProjectGuid>
@@ -130,9 +150,6 @@
   </PropertyGroup>
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <None Include="boot.s" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
